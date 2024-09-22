@@ -13,7 +13,7 @@
 
 class Hyper{
 
-    public $apikey = ' '; //นำ API Key มาใส่ที่นี่
+    public $apikey = ' '; //Njg3YWRhM2JjZWRiYzhjNjI2MzAwMzE2NDVjaGF3YW5yYXQ
 
     public $startpoint = 'http://hyperstudio.xyz/plugin/hypertruewalletapi.php';
     function hyperRequest($giftlink){
@@ -42,3 +42,25 @@ class Hyper{
 }
 
 ?>
+
+<?php
+
+  include('hyperclass.php');
+  $useapi = new Hyper();
+  $value = $_POST['link']; //ค่าลิ้งซองของขวัญ
+  $mygiftlink = str_replace(' ','',$value);
+  $result = $useapi->hyperRequest($mygiftlink);
+  
+  if($result['code'] == '200'){ //ทำรายการสำเร็จ	
+  
+	  $link =  $result['link']; // https://github.com/sharpaddroot/api-truewallet-gift-class
+	  $money =  $result['amount']; //9000
+	  $date =  $result['date']; //23/09/2567		
+    
+  }else{ //ทำรายการไม่สำเร็จ		
+  
+	  $errormsg = $result['msg']; //แสดงข้อความ Error	
+    
+  }
+  
+ ?>
