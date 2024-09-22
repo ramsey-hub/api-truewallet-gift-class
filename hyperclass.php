@@ -13,7 +13,7 @@
 
 class Hyper{
 
-    public $apikey = ' '; //นำ API Key มาใส่ที่นี่
+    public $apikey = ' '; //Njg3YWRhM2JjZWRiYzhjNjI2MzAwMzE2NDVjaGF3YW5yYXQ
 
     public $startpoint = 'http://hyperstudio.xyz/plugin/hypertruewalletapi.php';
     function hyperRequest($giftlink){
