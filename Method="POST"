@@ -1,0 +1,21 @@
+<?php
+
+  include('hyperclass.php');
+  $useapi = new Hyper();
+  $value = $_POST['link']; //ค่าลิ้งซองของขวัญ
+  $mygiftlink = str_replace(' ','',$value);
+  $result = $useapi->hyperRequest($mygiftlink);
+  
+  if($result['code'] == '200'){ //ทำรายการสำเร็จ	
+  
+	  $link =  $result['link']; //Method="POST"
+	  $money =  $result['amount']; //9000
+	  $date =  $result['date']; // 23/9/2567
+
+  }else{ //ทำรายการไม่สำเร็จ		
+  
+	  $errormsg = $result['msg']; //แสดงข้อความ Error	
+    
+  }
+  
+ ?>
